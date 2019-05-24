@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+button{
+    position:absolute;
+     bottom: 25%;
+    right:250px;
+    background-color: darkslategrey;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+}
+</style>
+
+<body>
+
+
+  <h4> Please look at the graphic and study the storm’s information. (Graphic 8 of 9)   </h4>
+
+</body>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+<script>
+var timeSpent = 0; //seconds on page
+var timer;
+window.onload = function() {
+  timer = setInterval( function() { timeSpent++; }, 998 );
+};
+
+
+
+var site = "NHC1";
+var sectors = {};
+var nhc = {};
+var endtotal = 0;
+var imagename = "SandyNHC";
+  d3.csv("data/circles.csv", function(d) {
+      //convert string into #
+      //console.log(d);
+      return {
+        circle: d.circle,
+        cx: +d.cx,
+        cy: +d.cy,
+        value: +d.value,
+        radius: +d.radius,
+      };
+    }).then(function(data) {
+      //variables for height, width, and padding
+      var w = 1000;
+      var h = 860;
+      var p = 40;
+      var counts = {};
+      var img_url = "url(/images/Sandy_NHC.png)"
+
+      //create svg
+      var svg = d3.select("body")
+        .append("svg")
+        .attr("width", w + p)
+        .attr("height", h + p);
+
+      svg
+        .append('svg:image')
+        .attr("xlink:href", "images/Sandy_NHC.png")
+        .attr("width", "100%")
+        .attr("height", "100%")
+        .attr("x", 0)
+        .attr("y", -2)
+        .style("opacity", 1);
+
+
+
+    });
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+$(function() {
+  $('#nextb').on('click', function() {
+    //this is what I want to save!
+    setTimeout("location.href = 'ArwenNHC.html';",200);
+
+  });
+
+});
+</script>
+
+
+<div>
+  <button id="nextb" type="button"> NEXT >> </button>
+</div>
+</html>

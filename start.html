@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+  <!-- basic.html -->
+  <title>Start</title>
+  <meta charset = "UTF-8" />
+  <style>
+    button {
+      position: absolute;
+      background-color: darkslategrey;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Instructions</h1>
+  <label for="name">Participant ID</label>
+
+<input type="text" id="p_id" name="name" required
+       minlength="4" maxlength="8" size="10">
+   <br><Br>
+
+         <p> On the next screen,  you will see a tropical cyclone (i.e. hurricane or tropical storm) forecast graphic.  Please look at the graphic and study the storm’s information. Next, you will estimate the probability that center of the storm will traverse through each of eight sectors.  You will need to place numbered chips in the sectors to indicate your estimate of probability that the storm would exit the circle in the corresponding sector. The chips range in value from 1 to 20 and have a cumulative value of 100.  You need to place all chips in the sectors to proceed. Make sure you do not overlay the chips, if you do, the totals will not be counted properly. Please note that the current position for the storm is indicated with a red dot. You will complete this exercise for 9 tropical cyclones with each type of forecast graphic.  There are a total of 27 trials.</p>
+     <br>
+
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+localStorage.clear()
+  $(function() {
+    $('#start').on('click', function() {
+      //this is what I want to save!
+      var pID= document.getElementById("p_id").value;
+
+
+
+      var local = localStorage.setItem("participant", pID);
+
+      window.location.href = "LeiaNHCmap.html";
+    });
+
+  });
+</script>
+
+
+  <button id="start" type="button"> START </button>
+</body>
+
+
+</html>
