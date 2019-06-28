@@ -21,10 +21,10 @@
 
 <body>
   <h1>Instructions</h1>
-  <label for="name">Participant ID</label>
+  <label for="name">Participant Name</label>
 
 <input type="text" id="p_id" name="name" required
-       minlength="4" maxlength="8" size="10">
+       minlength="4" maxlength="20" size="15">
    <br><Br>
 
          <p> On the next screen,  you will see a tropical cyclone (TC), i.e. hurricane or tropical storm, forecast graphic.  Please look at the graphic and study the TC’s information. Next, you will estimate the probability that center of the storm will traverse through each of eight sectors.  You will need to place numbered chips in the sectors to indicate your estimate of probability that the storm would exit the circle in the corresponding sector. The chips range in value from 1 to 20 and have a cumulative value of 100.  You need to place all chips in the sector to proceed.  Make sure you do not overlay the chips, if you do, the totals will not be counted properly. You will complete this exercise for 9 TC using a hurricane forecast graphic. </p>
@@ -43,7 +43,7 @@ localStorage.clear()
 
       var local = localStorage.setItem("participant", pID);
 
-      window.location.href = "LeiaNHCmap.html";
+      window.location.href = "LeiaNHC.html";
     });
 
   });
